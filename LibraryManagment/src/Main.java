@@ -1,7 +1,7 @@
-import Project1.Book;
-import Project1.Customer;
-import Project1.CustomerDatabase;
-import Project1.InventoryItem;
+import Project1.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
@@ -13,12 +13,22 @@ public class Main {
       //  System.out.println(customerDatabase.findClient("Orifjon Suyunov"));
      //  customerDatabase.removeCustomer("Anvar Suyunov");
 
-        customerDatabase.displayClients();
+      //  customerDatabase.displayClients();
 
         Book book = new Book(1,"Lolita","Vladimir Nabokov",2100,70);
-        InventoryItem inventoryItem = new InventoryItem();
-        inventoryItem.addBook(book);
-        inventoryItem.displayBook();
+        Book book1 = new Book(2,"Rich dad and Poor dad","Robert Kiyosaki",2101,50);
+        List<Book> books =new ArrayList<>();
+        books.add(book);
+        books.add(book1);
+
+        OrderProcessor orderProcessor = new OrderProcessor();
+        orderProcessor.placeOrder(customer,books);
+
+        orderProcessor.displayOrders();
+
+
+
+
 
 
 
